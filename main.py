@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from flask import json
+from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 
@@ -39,8 +41,16 @@ def portal_stories_mel():
 def world_of_tanks():
     return render_template('world of tanks.html', the_title='World of Tanks')
 
-@app.errorhandler(404)
-def page_not_found(e):
-	return render_template('404.html'), 404
+
+@app.errorhandler(HTTPException)
+def handle_exception(e):
+    response = e.get_response()
+    response.data = json.dumps({
+        "code": e.code,
+        "name": e.name,
+        "description": e.description,
+    })
+    response.content_type = "application/json"
+    return render_template('error.html', code_=e.code, description_=e.description)
     
 app.run()
