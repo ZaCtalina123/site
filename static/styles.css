@@ -1,0 +1,15 @@
+* {
+   font-family: Arial, Verdana, sans-serif;
+}
+
+body {
+    background-color: floralwhite;
+}
+
+h1 {
+    color: chartreuse;
+}
+
+table {
+    border-color: blue;
+}

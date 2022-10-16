@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+
+	<head>
+	
+		<title>{{ the_title }}</title>
+		<link rel="stylesheet" href="static/styles.css">
+		
+	</head>
+
+	<body>
+	
+		<form method='POST'>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/half_life">Half-Life Soundtrack</a></li>
+				<li><a href="/half_life_2">Half-Life 2 Soundtrack</a></li>
+				<li><a href="/half_life_2_episode_one">Half-Life 2 Episode One Soundtrack</a></li>
+				<li><a href="/half_life_2_episode_two">Half-Life 2 Episode Two Soundtrack</a></li>
+				<li><a href="/portal">Portal Soundtrack</a></li>
+				<li><a href="/portal_2">Portal 2 Soundtrack</a></li>
+				<li><a href="/portal_stories_mel">Portal Stories Mel Soundtrack</a></li>
+			</ul>
+		</form>
+		
+		{% block body %}
+		
+		{% endblock %}
+	
+	</body>
+
+</html>
